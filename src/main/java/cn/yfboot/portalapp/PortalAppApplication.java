@@ -15,13 +15,15 @@ public class PortalAppApplication {
         this.environment = environment;
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(PortalAppApplication.class, args);
-    }
-
     @PostConstruct
     public void printServerPort() {
         System.out.println("当前配置的服务器端口号: " + environment.getProperty("server.port"));
     }
+
+    public static void main(String[] args) {
+        SpringApplication.run(PortalAppApplication.class, args);
+        System.out.println("门户系统后台启动成功~");
+    }
+
 
 }
